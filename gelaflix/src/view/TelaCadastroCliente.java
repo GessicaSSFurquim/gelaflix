@@ -43,7 +43,7 @@ public class TelaCadastroCliente extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         tfNome = new javax.swing.JTextField();
-        jFormattedTextField2 = new javax.swing.JFormattedTextField();
+        tfCPF = new javax.swing.JFormattedTextField();
         jLabel2 = new javax.swing.JLabel();
         jcbPlano = new javax.swing.JComboBox<>();
         jLabel12 = new javax.swing.JLabel();
@@ -89,14 +89,14 @@ public class TelaCadastroCliente extends javax.swing.JFrame {
         jPanel1.setToolTipText("");
 
         try {
-            jFormattedTextField2.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+            tfCPF.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        jFormattedTextField2.setToolTipText("");
-        jFormattedTextField2.addActionListener(new java.awt.event.ActionListener() {
+        tfCPF.setToolTipText("");
+        tfCPF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jFormattedTextField2ActionPerformed(evt);
+                tfCPFActionPerformed(evt);
             }
         });
 
@@ -176,7 +176,7 @@ public class TelaCadastroCliente extends javax.swing.JFrame {
                         .addGap(25, 25, 25)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(tfNome)
-                            .addComponent(jFormattedTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 324, Short.MAX_VALUE))))
+                            .addComponent(tfCPF, javax.swing.GroupLayout.DEFAULT_SIZE, 324, Short.MAX_VALUE))))
                 .addGap(34, 34, 34)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3)
@@ -205,7 +205,7 @@ public class TelaCadastroCliente extends javax.swing.JFrame {
                             .addComponent(tfNascimento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(26, 26, 26))
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jFormattedTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tfCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel18)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tfEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -268,7 +268,7 @@ public class TelaCadastroCliente extends javax.swing.JFrame {
         });
 
         try {
-            tfNum.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
+            tfNum.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###*")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -391,11 +391,12 @@ public class TelaCadastroCliente extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(LoginLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jBLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())))
+                        .addGap(30, 30, 30))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -427,8 +428,8 @@ public class TelaCadastroCliente extends javax.swing.JFrame {
         // TODO add your handling code here:
         boolean comparator = false;
         if(tfSenha.getText().equals(tfSenha2.getText())){
-            pedidoSQL1 = "INSERT INTO usuario VALUES(null,'"+tfNome.getText()+"','"+tfNascimento.getText()+"','"+jFormattedTextField2.getText()+"','"+tfEmail.getText()+"','"+tfSenha.getText()+"','"+tfRua.getText()+"','"+tfNum.getText()+"','"+tfBairro.getText()+"','"+tfCidade.getText()+"','"+tfEstado.getText()+"','"+tfPais.getText()+"','"+tfTelefone.getText()+"','"+(jcbPlano.getSelectedIndex()+1)+"','"+(jcbPgto.getSelectedIndex()+1)+"');";
-            pedidoSQL2 = "SELECT * FROM usuario where email = '"+tfEmail.getText()+"' and senha = '"+tfSenha.getText()+"';";
+            pedidoSQL1 = "INSERT INTO usuario VALUES(null,'"+tfNome.getText()+"','"+tfNascimento.getText()+"','"+tfCPF.getText()+"','"+tfEmail.getText()+"','"+tfSenha.getText()+"','"+tfRua.getText()+"','"+tfNum.getText()+"','"+tfBairro.getText()+"','"+tfCidade.getText()+"','"+tfEstado.getText()+"','"+tfPais.getText()+"','"+tfTelefone.getText()+"','"+(jcbPlano.getSelectedIndex()+1)+"','"+(jcbPgto.getSelectedIndex()+1)+"');";
+            pedidoSQL2 = "SELECT * FROM usuario where email = '"+tfEmail.getText()+"' and senha = '"+tfSenha.getText()+"' and cpf = '"+tfCPF.getText()+"';";
             System.out.println(pedidoSQL1);
             acessoBD = new AcessoBD();
             acessoBD.conecta();
@@ -438,10 +439,8 @@ public class TelaCadastroCliente extends javax.swing.JFrame {
                 while(rs.next()){
                     email = rs.getString("email");
                     nome = rs.getString("nome");
-                    senha = rs.getString("senha");
                     System.out.println("Nome: " + nome);
                     System.out.println("Email: " + email);
-                    System.out.println("Senha: " + senha);
                     comparator = true;}
             }
             catch(SQLException e){
@@ -449,11 +448,12 @@ public class TelaCadastroCliente extends javax.swing.JFrame {
             }
             acessoBD.fechaConexao();
             if(comparator == false){
-                new ErroCad().setVisible(true);
+                new ErroCredenciais().setVisible(true);
             }else{
-                JOptionPane.showMessageDialog(null, "Cadastro efetuado com sucesso!");
+                System.out.println("User registration completed.");
                 this.dispose();
                 new TelaLoginModal(this, false).setVisible(true);
+                new CadastroEfetuado().setVisible(true);
             }
         }else{
             JOptionPane.showMessageDialog(null,"Erro, senhas incorretas");
@@ -481,9 +481,9 @@ public class TelaCadastroCliente extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jcbPlanoActionPerformed
 
-    private void jFormattedTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField2ActionPerformed
+    private void tfCPFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfCPFActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jFormattedTextField2ActionPerformed
+    }//GEN-LAST:event_tfCPFActionPerformed
 
     private void tfNumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfNumActionPerformed
         // TODO add your handling code here:
@@ -528,7 +528,6 @@ public class TelaCadastroCliente extends javax.swing.JFrame {
     private javax.swing.JLabel CadastroTitle;
     private javax.swing.JLabel LoginLabel;
     private javax.swing.JToggleButton jBLogin;
-    private javax.swing.JFormattedTextField jFormattedTextField2;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
@@ -551,6 +550,7 @@ public class TelaCadastroCliente extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jcbPgto;
     private javax.swing.JComboBox<String> jcbPlano;
     private javax.swing.JTextField tfBairro;
+    private javax.swing.JFormattedTextField tfCPF;
     private javax.swing.JTextField tfCidade;
     private javax.swing.JTextField tfEmail;
     private javax.swing.JTextField tfEstado;
