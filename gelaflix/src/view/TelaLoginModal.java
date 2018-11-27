@@ -7,11 +7,7 @@
 package view;
 
 import java.sql.SQLException;
-import javax.swing.JOptionPane;
-import static view.AcessoBancoDados.email;
-import static view.AcessoBancoDados.nome;
 import static view.TelaCadastroCliente.acessoBD;
-import static view.TelaCadastroCliente.pedidoSQL1;
 import static view.TelaCadastroCliente.pedidoSQL2;
 import static view.TelaCadastroCliente.rs;
 
@@ -216,9 +212,8 @@ public class TelaLoginModal extends javax.swing.JDialog {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        
+        System.out.println("Closing the application");
         System.exit(0);
-        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void txtLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLoginActionPerformed

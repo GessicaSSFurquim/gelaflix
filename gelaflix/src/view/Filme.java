@@ -96,19 +96,20 @@ public class Filme extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(255, 88, 100));
         jLabel5.setText("Ano:");
 
+        jtaSinopse.setEditable(false);
         jtaSinopse.setColumns(20);
         jtaSinopse.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jtaSinopse.setLineWrap(true);
         jtaSinopse.setRows(5);
         jtaSinopse.setText("[sinopse]");
-        jtaSinopse.setToolTipText("[sinopse]");
+        jtaSinopse.setToolTipText("");
         jtaSinopse.setWrapStyleWord(true);
-        jtaSinopse.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
+        jtaSinopse.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         jtaSinopse.setCaretColor(new java.awt.Color(255, 255, 255));
         jtaSinopse.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jtaSinopse.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         jtaSinopse.setFocusable(false);
-        jtaSinopse.setMargin(new java.awt.Insets(5, 5, 5, 5));
+        jtaSinopse.setMargin(new java.awt.Insets(0, 0, 0, 0));
         jtaSinopse.setOpaque(false);
         jScrollPane1.setViewportView(jtaSinopse);
         jScrollPane1.setBorder(null);

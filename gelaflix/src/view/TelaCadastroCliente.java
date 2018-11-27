@@ -9,9 +9,6 @@ package view;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
-import static view.AcessoBancoDados.email;
-import static view.AcessoBancoDados.nome;
-import static view.AcessoBancoDados.senha;
 
 /**
  *
@@ -24,8 +21,7 @@ public class TelaCadastroCliente extends javax.swing.JFrame {
      */
     public static AcessoBD acessoBD;
     public static ResultSet rs = null;
-    public static String pedidoSQL1;
-    public static String pedidoSQL2;
+    public static String pedidoSQL1, pedidoSQL2, nome, email, senha;
     
     public TelaCadastroCliente() {
         initComponents();
