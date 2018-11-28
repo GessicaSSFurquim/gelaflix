@@ -28,7 +28,7 @@ public class Gelaflix extends javax.swing.JFrame {
     public Gelaflix(int userId) {
         initComponents();
         codigo = userId;
-        pedidoSQL1 = "SELECT nome FROM usuario where codigo = "+userId;
+        pedidoSQL1 = "SELECT SUBSTRING_INDEX(nome, ' ', 1) AS nome FROM usuario where codigo =  "+userId;//recebe somente primeiro nome do usuário
         System.out.println(pedidoSQL1);
         acessoBD = new AcessoBD();
         acessoBD.conecta();
@@ -172,7 +172,7 @@ public class Gelaflix extends javax.swing.JFrame {
             }
         });
 
-        jToggleButton2.setText("Sua conta");
+        jToggleButton2.setText("Perfil");
         jToggleButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jToggleButton2ActionPerformed(evt);
@@ -188,15 +188,17 @@ public class Gelaflix extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(welcomeText)
-                        .addGap(31, 31, 31)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jToggleButton2)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 938, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 938, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jToggleButton1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(ExitButton)
-                        .addGap(135, 135, 135))
+                        .addGap(135, 794, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addComponent(Filme1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)

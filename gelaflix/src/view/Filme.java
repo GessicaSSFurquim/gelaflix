@@ -16,15 +16,12 @@ public class Filme extends javax.swing.JFrame {
      */
     public Filme(String tituloOriginal, String tituloPortugues, String classificacao, String sinopse, String duracao, int ano) {
         initComponents();
-        jlNome.setText(convertToMultiline(tituloOriginal));
+        jlNome.setText(tituloOriginal);
         jlNomePTBR.setText(tituloPortugues);
         jlClass.setText(classificacao);
         jtaSinopse.setText(sinopse);
         jlDuracao.setText(duracao);
         jlAno.setText(Integer.toString(ano));
-    }
-    public static String convertToMultiline(String orig){
-        return "<html>" + orig.replaceAll("\b", "<br>");
     }
     /**
      * This method is called from within the constructor to initialize the form.

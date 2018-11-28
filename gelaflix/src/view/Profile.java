@@ -20,15 +20,16 @@ public class Profile extends javax.swing.JFrame {
     /**
      * Creates new form Account
      */
+    int codigo;
     public Profile(int id) {
         initComponents();
-            pedidoSQL2 = "SELECT *, plano.descricao as 'plano', formapagamento.descricao as 'pagamento' FROM usuario, plano, formapagamento where usuario.codigo = "+id+" and idplano = plano.codigo and idpagamento = formapagamento.codigo;";
-            pedidoSQL1 = "SELECT *, plano.descricao as 'plano', formapagamento.descricao as 'forma pagamento' FROM usuario, plano, formapagamento where usuario.codigo = 1 and idplano = plano.codigo and idpagamento = formapagamento.codigo";
-            String address;
-            System.out.println(pedidoSQL2);
-            acessoBD = new AcessoBD();
-            acessoBD.conecta();
-            rs = acessoBD.consulta(pedidoSQL2);
+        codigo = id;
+        pedidoSQL2 = "SELECT *, plano.descricao as 'plano', formapagamento.descricao as 'pagamento' FROM usuario, plano, formapagamento where usuario.codigo = "+id+" and idplano = plano.codigo and idpagamento = formapagamento.codigo;";
+        pedidoSQL1 = "SELECT *, plano.descricao as 'plano', formapagamento.descricao as 'forma pagamento' FROM usuario, plano, formapagamento where usuario.codigo = 1 and idplano = plano.codigo and idpagamento = formapagamento.codigo";
+        String address;
+        acessoBD = new AcessoBD();
+        acessoBD.conecta();
+        rs = acessoBD.consulta(pedidoSQL2);
             try{
                 while(rs.next()){
                     userName.setText(rs.getString("nome"));
@@ -63,7 +64,6 @@ public class Profile extends javax.swing.JFrame {
     private void initComponents() {
 
         Content = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -78,14 +78,11 @@ public class Profile extends javax.swing.JFrame {
         userPlan = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        goBackButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         Content.setBackground(new java.awt.Color(255, 255, 255));
-
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 88, 100));
-        jLabel1.setText("Proprietário:");
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 88, 100));
@@ -107,6 +104,8 @@ public class Profile extends javax.swing.JFrame {
 
         userEmail.setText("[email]");
 
+        userName.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        userName.setForeground(new java.awt.Color(255, 88, 100));
         userName.setText("[name]");
 
         userBirthDate.setText("[birthdate]");
@@ -141,68 +140,86 @@ public class Profile extends javax.swing.JFrame {
         jLabel7.setForeground(new java.awt.Color(255, 88, 100));
         jLabel7.setText("Forma de pagamento:");
 
+        goBackButton.setBackground(new java.awt.Color(250, 40, 120));
+        goBackButton.setForeground(new java.awt.Color(255, 255, 255));
+        goBackButton.setText("Voltar");
+        goBackButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                goBackButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout ContentLayout = new javax.swing.GroupLayout(Content);
         Content.setLayout(ContentLayout);
         ContentLayout.setHorizontalGroup(
             ContentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ContentLayout.createSequentialGroup()
-                .addGroup(ContentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGap(39, 39, 39)
+                .addGroup(ContentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(userName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(ContentLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, ContentLayout.createSequentialGroup()
-                        .addGap(39, 39, 39)
                         .addGroup(ContentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(ContentLayout.createSequentialGroup()
+                                .addGroup(ContentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel3)
+                                    .addGroup(ContentLayout.createSequentialGroup()
+                                        .addGap(10, 10, 10)
+                                        .addGroup(ContentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(userBirthDate)
+                                            .addComponent(userCPF)
+                                            .addComponent(userEmail))))
+                                .addGap(94, 94, 94)
+                                .addGroup(ContentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel5)
+                                    .addComponent(jLabel6)
+                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(ContentLayout.createSequentialGroup()
+                                        .addGap(10, 10, 10)
+                                        .addComponent(userPlan))))
+                            .addComponent(goBackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel7)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel4)
                             .addGroup(ContentLayout.createSequentialGroup()
                                 .addGap(10, 10, 10)
-                                .addGroup(ContentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(userPayment)
-                                    .addComponent(userPlan)
-                                    .addComponent(userEmail)
-                                    .addComponent(userCPF)
-                                    .addComponent(userBirthDate)
-                                    .addComponent(userName))))))
-                .addContainerGap(364, Short.MAX_VALUE))
+                                .addComponent(userPayment)))
+                        .addGap(0, 103, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         ContentLayout.setVerticalGroup(
             ContentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ContentLayout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addContainerGap()
                 .addComponent(userName)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel2)
+                .addGap(28, 28, 28)
+                .addGroup(ContentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel5))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(userBirthDate)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel3)
+                .addGroup(ContentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(ContentLayout.createSequentialGroup()
+                        .addComponent(userBirthDate)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(userEmail))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(ContentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel6))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(userCPF)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(userEmail)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(userPlan)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(userPayment)
-                .addContainerGap(68, Short.MAX_VALUE))
+                .addGroup(ContentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(ContentLayout.createSequentialGroup()
+                        .addComponent(userCPF)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(userPayment))
+                    .addComponent(userPlan))
+                .addGap(33, 33, 33)
+                .addComponent(goBackButton)
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -214,13 +231,21 @@ public class Profile extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, 0)
-                .addComponent(Content, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(Content, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0))
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void goBackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goBackButtonActionPerformed
+        // TODO add your handling code here:
+        System.out.println("Log out request");
+        this.dispose();
+        new Gelaflix(codigo).setVisible(true);
+    }//GEN-LAST:event_goBackButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -260,7 +285,7 @@ public class Profile extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Content;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton goBackButton;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
