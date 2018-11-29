@@ -63,10 +63,10 @@ public class Gelaflix extends javax.swing.JFrame {
         Filme1 = new javax.swing.JButton();
         ExitButton = new javax.swing.JButton();
         welcomeText = new javax.swing.JLabel();
-        jToggleButton1 = new javax.swing.JToggleButton();
+        goBackButton = new javax.swing.JToggleButton();
         Filme7 = new javax.swing.JButton();
         Filme6 = new javax.swing.JButton();
-        jToggleButton2 = new javax.swing.JToggleButton();
+        userProfileButton = new javax.swing.JToggleButton();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -147,12 +147,12 @@ public class Gelaflix extends javax.swing.JFrame {
         welcomeText.setForeground(new java.awt.Color(255, 88, 100));
         welcomeText.setText("[welcome-text]");
 
-        jToggleButton1.setBackground(new java.awt.Color(255, 88, 100));
-        jToggleButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jToggleButton1.setText("Sair");
-        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+        goBackButton.setBackground(new java.awt.Color(255, 88, 100));
+        goBackButton.setForeground(new java.awt.Color(255, 255, 255));
+        goBackButton.setText("Sair");
+        goBackButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton1ActionPerformed(evt);
+                goBackButtonActionPerformed(evt);
             }
         });
 
@@ -172,10 +172,10 @@ public class Gelaflix extends javax.swing.JFrame {
             }
         });
 
-        jToggleButton2.setText("Perfil");
-        jToggleButton2.addActionListener(new java.awt.event.ActionListener() {
+        userProfileButton.setText("Perfil");
+        userProfileButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton2ActionPerformed(evt);
+                userProfileButtonActionPerformed(evt);
             }
         });
 
@@ -189,13 +189,13 @@ public class Gelaflix extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(welcomeText)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jToggleButton2)
+                        .addComponent(userProfileButton)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 938, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jToggleButton1)
+                        .addComponent(goBackButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(ExitButton)
                         .addGap(135, 794, Short.MAX_VALUE))
@@ -221,7 +221,7 @@ public class Gelaflix extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(welcomeText)
-                    .addComponent(jToggleButton2))
+                    .addComponent(userProfileButton))
                 .addGap(19, 19, 19)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -237,7 +237,7 @@ public class Gelaflix extends javax.swing.JFrame {
                 .addGap(18, 18, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ExitButton)
-                    .addComponent(jToggleButton1))
+                    .addComponent(goBackButton))
                 .addContainerGap())
         );
 
@@ -543,10 +543,10 @@ public class Gelaflix extends javax.swing.JFrame {
             acessoBD.fechaConexao();
     }//GEN-LAST:event_Filme4ActionPerformed
 
-    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+    private void goBackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goBackButtonActionPerformed
         System.out.println("Closing the application");
         System.exit(0);
-    }//GEN-LAST:event_jToggleButton1ActionPerformed
+    }//GEN-LAST:event_goBackButtonActionPerformed
 
     private void Filme6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Filme6ActionPerformed
         // TODO add your handling code here:
@@ -595,19 +595,13 @@ public class Gelaflix extends javax.swing.JFrame {
             
             try{
                 while(rs.next()){
-                System.out.println("Procurando dados");
+                System.out.println("Search movie data");
                 tituloOriginal = rs.getString("tituloOriginal");
                 tituloPortugues = rs.getString("tituloPortugues");
                 classificacao = rs.getString("classificacao");
                 sinopse = rs.getString("sinopse");
                 duracao = rs.getString("duracao");
                 ano = Integer.parseInt(rs.getString("ano"));
-                System.out.println("tituloOriginal: " + tituloOriginal);
-                System.out.println("tituloPortugues: " + tituloPortugues);
-                System.out.println("classificacao: " + classificacao);
-                System.out.println("sinopse: " + sinopse);
-                System.out.println("duracao: " + duracao);
-                System.out.println("ano: " + ano);
                 comparator = true;}
             }
             catch(SQLException e){
@@ -617,16 +611,16 @@ public class Gelaflix extends javax.swing.JFrame {
                 new Filme(tituloOriginal, tituloPortugues, classificacao, sinopse, duracao, ano).setVisible(true);
                 comparator = false;
             }else{
-                System.out.println("Nenhum dado foi encontrado");
+                System.out.println("No data found");
             }
             acessoBD.fechaConexao();
     }//GEN-LAST:event_Filme7ActionPerformed
 
-    private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
+    private void userProfileButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userProfileButtonActionPerformed
         // TODO add your handling code here:
         new Profile(codigo).setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jToggleButton2ActionPerformed
+    }//GEN-LAST:event_userProfileButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -679,11 +673,11 @@ public class Gelaflix extends javax.swing.JFrame {
     private javax.swing.JButton Filme5;
     private javax.swing.JButton Filme6;
     private javax.swing.JButton Filme7;
+    private javax.swing.JToggleButton goBackButton;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JToggleButton jToggleButton2;
+    private javax.swing.JToggleButton userProfileButton;
     private javax.swing.JLabel welcomeText;
     // End of variables declaration//GEN-END:variables
 }

@@ -100,6 +100,7 @@ public class TelaCadastroCliente extends javax.swing.JFrame {
 
         jcbPlano.setBackground(new java.awt.Color(255, 100, 90));
         jcbPlano.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Normal", "Premium" }));
+        jcbPlano.setSelectedIndex(-1);
         jcbPlano.setToolTipText("Tipo de plano");
         jcbPlano.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -239,7 +240,7 @@ public class TelaCadastroCliente extends javax.swing.JFrame {
 
         jcbPgto.setBackground(new java.awt.Color(255, 100, 90));
         jcbPgto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Boleto", "Débito em conta", "Cartão de crédito" }));
-        jcbPgto.setSelectedItem(jLabel16);
+        jcbPgto.setSelectedIndex(-1);
         jcbPgto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jcbPgtoActionPerformed(evt);

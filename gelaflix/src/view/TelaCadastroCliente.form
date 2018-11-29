@@ -241,6 +241,7 @@
                     <StringItem index="1" value="Premium"/>
                   </StringArray>
                 </Property>
+                <Property name="selectedIndex" type="int" value="-1"/>
                 <Property name="toolTipText" type="java.lang.String" value="Tipo de plano"/>
               </Properties>
               <Events>
@@ -450,9 +451,7 @@
                     <StringItem index="2" value="Cart&#xe3;o de cr&#xe9;dito"/>
                   </StringArray>
                 </Property>
-                <Property name="selectedItem" type="java.lang.Object" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                  <Connection component="jLabel16" type="bean"/>
-                </Property>
+                <Property name="selectedIndex" type="int" value="-1"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jcbPgtoActionPerformed"/>
