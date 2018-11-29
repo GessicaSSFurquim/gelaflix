@@ -429,6 +429,12 @@ public class Profile extends javax.swing.JFrame {
         }
         acessoBD.fechaConexao();
         this.dispose();
+        try {
+            Thread.sleep(1000);
+            System.out.println("Updating...");	
+	} catch (InterruptedException e) {
+            e.printStackTrace();
+	}
         new Profile(codigo).setVisible(true);  
     }//GEN-LAST:event_userUpdateActionPerformed
 

@@ -449,6 +449,11 @@ public class TelaCadastroCliente extends javax.swing.JFrame {
             }else{
                 System.out.println("User registration completed.");
                 this.dispose();
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
                 new TelaLoginModal(this, false).setVisible(true);
                 new CadastroEfetuado().setVisible(true);
             }

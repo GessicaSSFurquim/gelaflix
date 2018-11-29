@@ -122,6 +122,11 @@ public class confirmDeletion extends javax.swing.JFrame {
         acessoBD.executa(pedidoSQL1);
         acessoBD.fechaConexao();
         this.dispose();
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         new TelaLoginModal(this, false).setVisible(true);
     }//GEN-LAST:event_confirmActionPerformed
 
