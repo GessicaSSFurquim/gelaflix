@@ -425,7 +425,10 @@ public class TelaCadastroCliente extends javax.swing.JFrame {
         // TODO add your handling code here:
         boolean comparator = false;
         if(tfSenha.getText().equals(tfSenha2.getText())){
-            pedidoSQL1 = "INSERT INTO usuario VALUES(null,'"+tfNome.getText()+"','"+tfNascimento.getText()+"','"+tfCPF.getText()+"','"+tfEmail.getText()+"','"+tfSenha.getText()+"','"+tfRua.getText()+"','"+tfNum.getText()+"','"+tfBairro.getText()+"','"+tfCidade.getText()+"','"+tfEstado.getText()+"','"+tfPais.getText()+"','"+tfTelefone.getText()+"','"+(jcbPlano.getSelectedIndex()+1)+"','"+(jcbPgto.getSelectedIndex()+1)+"');";
+            pedidoSQL1 = "INSERT INTO usuario VALUES(null,'"+tfNome.getText()+"','"+tfNascimento.getText()+"','"+tfCPF.getText()+"',"
+                    + "'"+tfEmail.getText()+"','"+tfSenha.getText()+"','"+tfRua.getText()+"','"+tfNum.getText()+"','"+tfBairro.getText()+"',"
+                                     + "'"+tfCidade.getText()+"','"+tfEstado.getText()+"','"+tfPais.getText()+"','"+tfTelefone.getText()+"',"
+                                                             + "'"+(jcbPlano.getSelectedIndex()+1)+"','"+(jcbPgto.getSelectedIndex()+1)+"');";
             pedidoSQL2 = "SELECT * FROM usuario where email = '"+tfEmail.getText()+"' and senha = '"+tfSenha.getText()+"' and cpf = '"+tfCPF.getText()+"';";
             System.out.println(pedidoSQL1);
             acessoBD = new AcessoBD();

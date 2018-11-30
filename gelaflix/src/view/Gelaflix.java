@@ -20,7 +20,7 @@ public class Gelaflix extends javax.swing.JFrame {
      */
     public static AcessoBD acessoBD;
     public static ResultSet rs = null;
-    public static String pedidoSQL1, pedidoSQL2, nome;
+    public static String pedidoSQL1, nome;
     public int userId, codigo;
     String tituloOriginal = null, tituloPortugues = null, classificacao = null, sinopse = null, duracao = null;
     boolean comparator = false;
@@ -364,7 +364,6 @@ public class Gelaflix extends javax.swing.JFrame {
             acessoBD = new AcessoBD();
             acessoBD.conecta();
             rs = acessoBD.consulta(pedidoSQL1);
-            
             try{
                 while(rs.next()){
                 System.out.println("Procurando dados");
@@ -479,7 +478,6 @@ public class Gelaflix extends javax.swing.JFrame {
             acessoBD = new AcessoBD();
             acessoBD.conecta();
             rs = acessoBD.consulta(pedidoSQL1);
-            
             try{
                 while(rs.next()){
                 tituloOriginal = rs.getString("tituloOriginal");
