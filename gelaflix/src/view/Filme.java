@@ -18,6 +18,8 @@ public class Filme extends javax.swing.JFrame {
      * Creates new form Filme
      */
     public Filme(String tituloOriginal, String tituloPortugues, String classificacao, String sinopse, String duracao, int ano, String posterPath) {
+        imgPath = posterPath;
+        fullPath = "\"../gelaflix/src/images/Poster/"+imgPath+"\"";
         initComponents();
         jlNome.setText(tituloOriginal);
         jlNomePTBR.setText(tituloPortugues);
@@ -25,8 +27,8 @@ public class Filme extends javax.swing.JFrame {
         jtaSinopse.setText(sinopse);
         jlDuracao.setText(duracao);
         jlAno.setText(Integer.toString(ano));
-        imgPath = posterPath;
-        fullPath = "\"../gelaflix/src/images/Poster/"+imgPath+"\"";
+        //imgPath = posterPath;
+        //fullPath = "\"../gelaflix/src/images/Poster/"+imgPath+"\"";
         System.out.println(fullPath);
     }
     /**
@@ -41,7 +43,7 @@ public class Filme extends javax.swing.JFrame {
         jSeparator2 = new javax.swing.JSeparator();
         jPanel2 = new javax.swing.JPanel();
         jlNome = new javax.swing.JLabel();
-        System.out.println("Part 3\"../gelaflix/src/images/Poster/"+imgPath+"\"");
+        System.out.println("Part 3 "+fullPath);
         jlPoster = new javax.swing.JLabel(new ImageIcon(fullPath));
         jlNomePTBR = new javax.swing.JLabel();
         jlClass = new javax.swing.JLabel();
@@ -66,7 +68,7 @@ public class Filme extends javax.swing.JFrame {
         jlNome.setForeground(new java.awt.Color(253, 41, 123));
         jlNome.setText("Nome");
 
-        System.out.println(fullPath);
+        System.out.println("Part 4 "+fullPath);
         jlPoster.setBackground(new java.awt.Color(253, 41, 123));
         jlPoster.setForeground(new java.awt.Color(253, 41, 123));
         jlPoster.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -159,10 +161,8 @@ public class Filme extends javax.swing.JFrame {
                                             .addComponent(jlClass)
                                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                     .addComponent(jLabel1))
-                                .addGap(0, 32, Short.MAX_VALUE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jButton1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                .addGap(0, 22, Short.MAX_VALUE))
+                            .addComponent(jButton1)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(23, 23, 23)
                         .addComponent(jlNome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))

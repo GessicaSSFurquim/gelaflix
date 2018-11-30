@@ -80,12 +80,9 @@
                                       </Group>
                                       <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="0" pref="32" max="32767" attributes="0"/>
+                                  <EmptySpace min="0" pref="22" max="32767" attributes="0"/>
                               </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
-                              </Group>
+                              <Component id="jButton1" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
@@ -170,8 +167,8 @@
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JLabel(new ImageIcon(fullPath))"/>
-            <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="System.out.println(&quot;Part 3\&quot;../gelaflix/src/images/Poster/&quot;+imgPath+&quot;\&quot;&quot;);"/>
-            <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="System.out.println(fullPath);"/>
+            <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="System.out.println(&quot;Part 3 &quot;+fullPath);"/>
+            <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="System.out.println(&quot;Part 4 &quot;+fullPath);"/>
           </AuxValues>
         </Component>
         <Component class="javax.swing.JLabel" name="jlNomePTBR">

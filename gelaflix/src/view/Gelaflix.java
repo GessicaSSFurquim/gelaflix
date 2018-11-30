@@ -279,12 +279,6 @@ public class Gelaflix extends javax.swing.JFrame {
                 sinopse = rs.getString("sinopse");
                 duracao = rs.getString("duracao");
                 ano = Integer.parseInt(rs.getString("ano"));
-                System.out.println("tituloOriginal: " + tituloOriginal);
-                System.out.println("tituloPortugues: " + tituloPortugues);
-                System.out.println("classificacao: " + classificacao);
-                System.out.println("sinopse: " + sinopse);
-                System.out.println("duracao: " + duracao);
-                System.out.println("ano: " + ano);
                 comparator = true;}
             }
             catch(SQLException e){
@@ -322,12 +316,6 @@ public class Gelaflix extends javax.swing.JFrame {
                 duracao = rs.getString("duracao");
                 ano = Integer.parseInt(rs.getString("ano"));
                 //path = rs.getString("destino");
-                System.out.println("tituloOriginal: " + tituloOriginal);
-                System.out.println("tituloPortugues: " + tituloPortugues);
-                System.out.println("classificacao: " + classificacao);
-                System.out.println("sinopse: " + sinopse);
-                System.out.println("duracao: " + duracao);
-                System.out.println("ano: " + ano);
                 comparator = true;}
             }
             catch(SQLException e){
@@ -360,12 +348,6 @@ public class Gelaflix extends javax.swing.JFrame {
                 duracao = rs.getString("duracao");
                 path = rs.getString("poster");
                 ano = Integer.parseInt(rs.getString("ano"));
-                System.out.println("tituloOriginal: " + tituloOriginal);
-                System.out.println("tituloPortugues: " + tituloPortugues);
-                System.out.println("classificacao: " + classificacao);
-                System.out.println("sinopse: " + sinopse);
-                System.out.println("duracao: " + duracao);
-                System.out.println("ano: " + ano);
                 comparator = true;}
             }
             catch(SQLException e){
@@ -394,12 +376,6 @@ public class Gelaflix extends javax.swing.JFrame {
                 sinopse = rs.getString("sinopse");
                 duracao = rs.getString("duracao");
                 ano = Integer.parseInt(rs.getString("ano"));
-                System.out.println("tituloOriginal: " + tituloOriginal);
-                System.out.println("tituloPortugues: " + tituloPortugues);
-                System.out.println("classificacao: " + classificacao);
-                System.out.println("sinopse: " + sinopse);
-                System.out.println("duracao: " + duracao);
-                System.out.println("ano: " + ano);
                 comparator = true;}
             }
             catch(SQLException e){
@@ -429,12 +405,6 @@ public class Gelaflix extends javax.swing.JFrame {
                 sinopse = rs.getString("sinopse");
                 duracao = rs.getString("duracao");
                 ano = Integer.parseInt(rs.getString("ano"));
-                System.out.println("tituloOriginal: " + tituloOriginal);
-                System.out.println("tituloPortugues: " + tituloPortugues);
-                System.out.println("classificacao: " + classificacao);
-                System.out.println("sinopse: " + sinopse);
-                System.out.println("duracao: " + duracao);
-                System.out.println("ano: " + ano);
                 comparator = true;}
             }
             catch(SQLException e){
@@ -471,12 +441,6 @@ public class Gelaflix extends javax.swing.JFrame {
                 sinopse = rs.getString("sinopse");
                 duracao = rs.getString("duracao");
                 ano = Integer.parseInt(rs.getString("ano"));
-                System.out.println("tituloOriginal: " + tituloOriginal);
-                System.out.println("tituloPortugues: " + tituloPortugues);
-                System.out.println("classificacao: " + classificacao);
-                System.out.println("sinopse: " + sinopse);
-                System.out.println("duracao: " + duracao);
-                System.out.println("ano: " + ano);
                 comparator = true;}
             }
             catch(SQLException e){
