@@ -6,6 +6,7 @@
 
 package view;
 
+import javax.swing.ImageIcon;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -22,7 +23,7 @@ public class Gelaflix extends javax.swing.JFrame {
     public static ResultSet rs = null;
     public static String pedidoSQL1, nome;
     public int userId, codigo;
-    String tituloOriginal = null, tituloPortugues = null, classificacao = null, sinopse = null, duracao = null;
+    String tituloOriginal = null, tituloPortugues = null, classificacao = null, sinopse = null, duracao = null, path = null;
     boolean comparator = false;
     
     public Gelaflix(int userId) {
@@ -56,16 +57,16 @@ public class Gelaflix extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
-        Filme5 = new javax.swing.JButton();
-        Filme3 = new javax.swing.JButton();
-        Filme2 = new javax.swing.JButton();
-        Filme4 = new javax.swing.JButton();
-        Filme1 = new javax.swing.JButton();
+        Filme5 = new javax.swing.JButton(new ImageIcon("C:/Users/danie/Documents/GitHub/gelaflix/gelaflix/src/images/Poster/Bruce.jpg"));
+        Filme3 = new javax.swing.JButton(new ImageIcon("C:/Users/danie/Documents/GitHub/gelaflix/gelaflix/src/images/Poster/Inglorious.jpg"));
+        Filme2 = new javax.swing.JButton(new ImageIcon("C:/Users/danie/Documents/GitHub/gelaflix/gelaflix/src/images/Poster/Forest.jpg"));
+        Filme4 = new javax.swing.JButton(new ImageIcon("C:/Users/danie/Documents/GitHub/gelaflix/gelaflix/src/images/Poster/Titanic.jpg"));
+        Filme1 = new javax.swing.JButton(new ImageIcon("../gelaflix/src/images/Poster/Matrix.jpg"));
         ExitButton = new javax.swing.JButton();
         welcomeText = new javax.swing.JLabel();
         goBackButton = new javax.swing.JToggleButton();
-        Filme7 = new javax.swing.JButton();
-        Filme6 = new javax.swing.JButton();
+        Filme7 = new javax.swing.JButton(new ImageIcon("C:/Users/danie/Documents/GitHub/gelaflix/gelaflix/src/images/Poster/TheExorcist.jpg"));
+        Filme6 = new javax.swing.JButton(new ImageIcon("C:/Users/danie/Documents/GitHub/gelaflix/gelaflix/src/images/Poster/Finding.jpg"));
         userProfileButton = new javax.swing.JToggleButton();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -93,7 +94,7 @@ public class Gelaflix extends javax.swing.JFrame {
         jLabel4.setText("Gelaflix");
 
         Filme5.setBackground(new java.awt.Color(255, 255, 255));
-        Filme5.setText("Filme5");
+        Filme5.setText(null);
         Filme5.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Filme5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -102,7 +103,7 @@ public class Gelaflix extends javax.swing.JFrame {
         });
 
         Filme3.setBackground(new java.awt.Color(255, 255, 255));
-        Filme3.setText("Filme3");
+        Filme3.setText(null);
         Filme3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Filme3ActionPerformed(evt);
@@ -110,7 +111,7 @@ public class Gelaflix extends javax.swing.JFrame {
         });
 
         Filme2.setBackground(new java.awt.Color(255, 255, 255));
-        Filme2.setText("Filme2");
+        Filme2.setText(null);
         Filme2.setToolTipText("");
         Filme2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -119,7 +120,9 @@ public class Gelaflix extends javax.swing.JFrame {
         });
 
         Filme4.setBackground(new java.awt.Color(255, 255, 255));
-        Filme4.setText("Filme4");
+        Filme4.setText(null);
+        Filme4.setIconTextGap(0);
+        Filme4.setMargin(new java.awt.Insets(0, 0, 0, 0));
         Filme4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Filme4ActionPerformed(evt);
@@ -127,7 +130,7 @@ public class Gelaflix extends javax.swing.JFrame {
         });
 
         Filme1.setBackground(new java.awt.Color(255, 255, 255));
-        Filme1.setText("Filme1");
+        Filme1.setText(null);
         Filme1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Filme1ActionPerformed(evt);
@@ -157,7 +160,7 @@ public class Gelaflix extends javax.swing.JFrame {
         });
 
         Filme7.setBackground(new java.awt.Color(255, 255, 255));
-        Filme7.setText("Filme7");
+        Filme7.setText(null);
         Filme7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Filme7ActionPerformed(evt);
@@ -165,7 +168,7 @@ public class Gelaflix extends javax.swing.JFrame {
         });
 
         Filme6.setBackground(new java.awt.Color(255, 255, 255));
-        Filme6.setText("Filme6");
+        Filme6.setText(null);
         Filme6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Filme6ActionPerformed(evt);
@@ -187,32 +190,34 @@ public class Gelaflix extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(welcomeText)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(userProfileButton)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 938, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(goBackButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(ExitButton)
-                        .addGap(135, 794, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(Filme1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Filme2, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Filme3, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Filme4, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Filme5, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Filme6, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Filme7, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE)))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(welcomeText)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(userProfileButton))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(Filme1, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(goBackButton)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(ExitButton)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Filme2, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Filme3, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Filme4, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Filme5, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Filme6, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Filme7, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addGap(15, 15, 15))
         );
         jPanel2Layout.setVerticalGroup(
@@ -225,16 +230,15 @@ public class Gelaflix extends javax.swing.JFrame {
                 .addGap(19, 19, 19)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Filme2, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(Filme1, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(Filme4, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(Filme3, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(Filme5, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(Filme6, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(Filme7, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Filme1, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Filme4, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Filme5, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Filme6, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Filme7, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Filme2, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Filme3, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ExitButton)
                     .addComponent(goBackButton))
@@ -242,116 +246,18 @@ public class Gelaflix extends javax.swing.JFrame {
         );
 
         Filme5.getAccessibleContext().setAccessibleDescription("");
-        pedidoSQL1 = "SELECT tituloPortugues FROM filme where codigo = 5";
-        System.out.println(pedidoSQL1);
-        acessoBD = new AcessoBD();
-        acessoBD.conecta();
-        acessoBD.executa(pedidoSQL1);
-        rs = acessoBD.consulta(pedidoSQL1);
-        try{
-            while(rs.next()){
-                Filme5.setText(rs.getString("tituloPortugues"));}
-        }
-        catch(SQLException e){
-            System.out.println("Exceção: " + e.toString());
-        }
-        acessoBD.fechaConexao();
-        pedidoSQL1 = "SELECT tituloPortugues FROM filme where codigo = 3";
-        System.out.println(pedidoSQL1);
-        acessoBD = new AcessoBD();
-        acessoBD.conecta();
-        acessoBD.executa(pedidoSQL1);
-        rs = acessoBD.consulta(pedidoSQL1);
-        try{
-            while(rs.next()){
-                Filme3.setText(rs.getString("tituloPortugues"));}
-        }
-        catch(SQLException e){
-            System.out.println("Exceção: " + e.toString());
-        }
-        acessoBD.fechaConexao();
-        pedidoSQL1 = "SELECT tituloPortugues FROM filme where codigo = 2";
-        System.out.println(pedidoSQL1);
-        acessoBD = new AcessoBD();
-        acessoBD.conecta();
-        rs = acessoBD.consulta(pedidoSQL1);
-        try{
-            while(rs.next()){
-                Filme2.setText(rs.getString("tituloPortugues"));}
-        }
-        catch(SQLException e){
-            System.out.println("Exceção: " + e.toString());
-        }
-        acessoBD.fechaConexao();
-        pedidoSQL1 = "SELECT tituloPortugues FROM filme where codigo = 4";
-        System.out.println(pedidoSQL1);
-        acessoBD = new AcessoBD();
-        acessoBD.conecta();
-        rs = acessoBD.consulta(pedidoSQL1);
-        try{
-            while(rs.next()){
-                Filme4.setText(rs.getString("tituloPortugues"));}
-        }
-        catch(SQLException e){
-            System.out.println("Exceção: " + e.toString());
-        }
-        acessoBD.fechaConexao();
-        pedidoSQL1 = "SELECT tituloPortugues FROM filme where codigo = 1";
-        System.out.println(pedidoSQL1);
-        acessoBD = new AcessoBD();
-        acessoBD.conecta();
-        rs = acessoBD.consulta(pedidoSQL1);
-        try{
-            while(rs.next()){
-                Filme1.setText(rs.getString("tituloPortugues"));}
-        }
-        catch(SQLException e){
-            System.out.println("Exceção: " + e.toString());
-        }
-        acessoBD.fechaConexao();
-        pedidoSQL1 = "SELECT tituloPortugues FROM filme where codigo = 7";
-        System.out.println(pedidoSQL1);
-        acessoBD = new AcessoBD();
-        acessoBD.conecta();
-        acessoBD.executa(pedidoSQL1);
-        rs = acessoBD.consulta(pedidoSQL1);
-        try{
-            while(rs.next()){
-                Filme7.setText(rs.getString("tituloPortugues"));}
-        }
-        catch(SQLException e){
-            System.out.println("Exceção: " + e.toString());
-        }
-        acessoBD.fechaConexao();
-        pedidoSQL1 = "SELECT tituloPortugues FROM filme where codigo = 6";
-        System.out.println(pedidoSQL1);
-        acessoBD = new AcessoBD();
-        acessoBD.conecta();
-        acessoBD.executa(pedidoSQL1);
-        rs = acessoBD.consulta(pedidoSQL1);
-        try{
-            while(rs.next()){
-                Filme6.setText(rs.getString("tituloPortugues"));}
-        }
-        catch(SQLException e){
-            System.out.println("Exceção: " + e.toString());
-        }
-        acessoBD.fechaConexao();
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(0, 0, 0))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(0, 0, 0)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -385,7 +291,7 @@ public class Gelaflix extends javax.swing.JFrame {
                 System.out.println("Exceção: " + e.toString());
             }
             if(comparator == true){
-                new Filme(tituloOriginal, tituloPortugues, classificacao, sinopse, duracao, ano).setVisible(true);
+                new Filme(tituloOriginal, tituloPortugues, classificacao, sinopse, duracao, ano, null).setVisible(true);
                 comparator = false;
             }else{
                 System.out.println("Nenhum dado foi encontrado");
@@ -415,6 +321,7 @@ public class Gelaflix extends javax.swing.JFrame {
                 sinopse = rs.getString("sinopse");
                 duracao = rs.getString("duracao");
                 ano = Integer.parseInt(rs.getString("ano"));
+                //path = rs.getString("destino");
                 System.out.println("tituloOriginal: " + tituloOriginal);
                 System.out.println("tituloPortugues: " + tituloPortugues);
                 System.out.println("classificacao: " + classificacao);
@@ -427,7 +334,7 @@ public class Gelaflix extends javax.swing.JFrame {
                 System.out.println("Exceção: " + e.toString());
             }
             if(comparator == true){
-                new Filme(tituloOriginal, tituloPortugues, classificacao, sinopse, duracao, ano).setVisible(true);
+                new Filme(tituloOriginal, tituloPortugues, classificacao, sinopse, duracao, ano, null).setVisible(true);
                 comparator = false;
             }else{
                 System.out.println("Nenhum dado foi encontrado");
@@ -451,6 +358,7 @@ public class Gelaflix extends javax.swing.JFrame {
                 classificacao = rs.getString("classificacao");
                 sinopse = rs.getString("sinopse");
                 duracao = rs.getString("duracao");
+                path = rs.getString("poster");
                 ano = Integer.parseInt(rs.getString("ano"));
                 System.out.println("tituloOriginal: " + tituloOriginal);
                 System.out.println("tituloPortugues: " + tituloPortugues);
@@ -464,7 +372,7 @@ public class Gelaflix extends javax.swing.JFrame {
                 System.out.println("Exceção: " + e.toString());
             }
             if(comparator == true){
-                new Filme(tituloOriginal, tituloPortugues, classificacao, sinopse, duracao, ano).setVisible(true);
+                new Filme(tituloOriginal, tituloPortugues, classificacao, sinopse, duracao, ano, path).setVisible(true);
                 comparator = false;
             }else{
                 System.out.println("Nenhum dado foi encontrado");
@@ -498,7 +406,7 @@ public class Gelaflix extends javax.swing.JFrame {
                 System.out.println("Exceção: " + e.toString());
             }
             if(comparator == true){
-                new Filme(tituloOriginal, tituloPortugues, classificacao, sinopse, duracao, ano).setVisible(true);
+                new Filme(tituloOriginal, tituloPortugues, classificacao, sinopse, duracao, ano, null).setVisible(true);
                 comparator = false;
             }else{
                 System.out.println("Nenhum dado foi encontrado");
@@ -533,7 +441,7 @@ public class Gelaflix extends javax.swing.JFrame {
                 System.out.println("Exceção: " + e.toString());
             }
             if(comparator == true){
-                new Filme(tituloOriginal, tituloPortugues, classificacao, sinopse, duracao, ano).setVisible(true);
+                new Filme(tituloOriginal, tituloPortugues, classificacao, sinopse, duracao, ano, null).setVisible(true);
                 comparator = false;
             }else{
                 System.out.println("Nenhum dado foi encontrado");
@@ -575,7 +483,7 @@ public class Gelaflix extends javax.swing.JFrame {
                 System.out.println("Exceção: " + e.toString());
             }
             if(comparator == true){
-                new Filme(tituloOriginal, tituloPortugues, classificacao, sinopse, duracao, ano).setVisible(true);
+                new Filme(tituloOriginal, tituloPortugues, classificacao, sinopse, duracao, ano, null).setVisible(true);
                 comparator = false;
             }else{
                 System.out.println("Nenhum dado foi encontrado");
@@ -606,7 +514,7 @@ public class Gelaflix extends javax.swing.JFrame {
                 System.out.println("Exceção: " + e.toString());
             }
             if(comparator == true){
-                new Filme(tituloOriginal, tituloPortugues, classificacao, sinopse, duracao, ano).setVisible(true);
+                new Filme(tituloOriginal, tituloPortugues, classificacao, sinopse, duracao, ano, null).setVisible(true);
                 comparator = false;
             }else{
                 System.out.println("No data found");

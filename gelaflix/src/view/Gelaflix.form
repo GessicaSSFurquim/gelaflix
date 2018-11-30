@@ -45,19 +45,15 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="1" attributes="0">
-              <Component id="jPanel2" max="32767" attributes="0"/>
-              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
-              <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-          </Group>
+          <Component id="jPanel2" alignment="1" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -79,35 +75,40 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <Component id="welcomeText" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="userProfileButton" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="1" attributes="0">
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           <Component id="jLabel4" min="-2" pref="938" max="-2" attributes="0"/>
                       </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="goBackButton" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="ExitButton" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="135" pref="794" max="32767" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <Component id="Filme1" min="-2" pref="130" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="Filme2" min="-2" pref="130" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="Filme3" min="-2" pref="130" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="Filme4" min="-2" pref="130" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="Filme5" min="-2" pref="129" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="Filme6" min="-2" pref="130" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="Filme7" pref="129" max="32767" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Component id="welcomeText" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="userProfileButton" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Component id="Filme1" min="-2" pref="146" max="-2" attributes="0"/>
+                                      <Group type="102" attributes="0">
+                                          <Component id="goBackButton" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="ExitButton" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="Filme2" min="-2" pref="146" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="Filme3" min="-2" pref="148" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="Filme4" min="-2" pref="146" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="Filme5" min="-2" pref="146" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="Filme6" min="-2" pref="146" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="Filme7" min="-2" pref="146" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
@@ -125,18 +126,16 @@
                   <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                   <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="Filme2" alignment="0" min="-2" pref="274" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="Filme1" alignment="3" min="-2" pref="274" max="-2" attributes="0"/>
-                          <Component id="Filme4" alignment="3" min="-2" pref="274" max="-2" attributes="0"/>
-                          <Component id="Filme3" alignment="3" min="-2" pref="274" max="-2" attributes="0"/>
-                          <Component id="Filme5" alignment="3" min="-2" pref="274" max="-2" attributes="0"/>
-                          <Component id="Filme6" alignment="3" min="-2" pref="274" max="-2" attributes="0"/>
-                          <Component id="Filme7" alignment="3" min="-2" pref="274" max="-2" attributes="0"/>
-                      </Group>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="Filme1" alignment="3" min="-2" pref="216" max="-2" attributes="0"/>
+                      <Component id="Filme4" alignment="3" min="-2" pref="216" max="-2" attributes="0"/>
+                      <Component id="Filme5" alignment="3" min="-2" pref="216" max="-2" attributes="0"/>
+                      <Component id="Filme6" alignment="3" min="-2" pref="216" max="-2" attributes="0"/>
+                      <Component id="Filme7" alignment="3" min="-2" pref="216" max="-2" attributes="0"/>
+                      <Component id="Filme2" alignment="3" min="-2" pref="216" max="-2" attributes="0"/>
+                      <Component id="Filme3" alignment="3" min="-2" pref="216" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="separate" max="32767" attributes="0"/>
+                  <EmptySpace pref="50" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="ExitButton" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="goBackButton" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -164,30 +163,37 @@
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Filme5"/>
+            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="null" type="code"/>
+            </Property>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
               <Color id="Cursor Padr&#xe3;o"/>
             </Property>
           </Properties>
           <AccessibilityProperties>
-            <Property name="AccessibleContext.accessibleDescription" type="java.lang.String" value="" postCode="pedidoSQL1 = &quot;SELECT tituloPortugues FROM filme where codigo = 5&quot;;&#xa;System.out.println(pedidoSQL1);&#xa;acessoBD = new AcessoBD();&#xa;acessoBD.conecta();&#xa;acessoBD.executa(pedidoSQL1);&#xa;rs = acessoBD.consulta(pedidoSQL1);&#xa;try{&#xa;    while(rs.next()){&#xa;        Filme5.setText(rs.getString(&quot;tituloPortugues&quot;));}&#xa;    }&#xa;catch(SQLException e){&#xa;    System.out.println(&quot;Exce&#xe7;&#xe3;o: &quot; + e.toString());&#xa;}&#xa;acessoBD.fechaConexao();"/>
+            <Property name="AccessibleContext.accessibleDescription" type="java.lang.String" value=""/>
           </AccessibilityProperties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Filme5ActionPerformed"/>
           </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JButton(new ImageIcon(&quot;C:/Users/danie/Documents/GitHub/gelaflix/gelaflix/src/images/Poster/Bruce.jpg&quot;))"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="Filme3">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Filme3"/>
+            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="null" type="code"/>
+            </Property>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Filme3ActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="pedidoSQL1 = &quot;SELECT tituloPortugues FROM filme where codigo = 3&quot;;&#xa;System.out.println(pedidoSQL1);&#xa;acessoBD = new AcessoBD();&#xa;acessoBD.conecta();&#xa;acessoBD.executa(pedidoSQL1);&#xa;rs = acessoBD.consulta(pedidoSQL1);&#xa;try{&#xa;    while(rs.next()){&#xa;        Filme3.setText(rs.getString(&quot;tituloPortugues&quot;));}&#xa;    }&#xa;catch(SQLException e){&#xa;    System.out.println(&quot;Exce&#xe7;&#xe3;o: &quot; + e.toString());&#xa;}&#xa;acessoBD.fechaConexao();"/>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JButton(new ImageIcon(&quot;C:/Users/danie/Documents/GitHub/gelaflix/gelaflix/src/images/Poster/Inglorious.jpg&quot;))"/>
           </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="Filme2">
@@ -195,14 +201,16 @@
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Filme2"/>
+            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="null" type="code"/>
+            </Property>
             <Property name="toolTipText" type="java.lang.String" value=""/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Filme2ActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="pedidoSQL1 = &quot;SELECT tituloPortugues FROM filme where codigo = 2&quot;;&#xa;System.out.println(pedidoSQL1);&#xa;acessoBD = new AcessoBD();&#xa;acessoBD.conecta();&#xa;rs = acessoBD.consulta(pedidoSQL1);&#xa;try{&#xa;    while(rs.next()){&#xa;        Filme2.setText(rs.getString(&quot;tituloPortugues&quot;));}&#xa;    }&#xa;catch(SQLException e){&#xa;    System.out.println(&quot;Exce&#xe7;&#xe3;o: &quot; + e.toString());&#xa;}&#xa;acessoBD.fechaConexao();"/>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JButton(new ImageIcon(&quot;C:/Users/danie/Documents/GitHub/gelaflix/gelaflix/src/images/Poster/Forest.jpg&quot;))"/>
           </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="Filme4">
@@ -210,13 +218,19 @@
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Filme4"/>
+            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="null" type="code"/>
+            </Property>
+            <Property name="iconTextGap" type="int" value="0"/>
+            <Property name="margin" type="java.awt.Insets" editor="org.netbeans.beaninfo.editors.InsetsEditor">
+              <Insets value="[0, 0, 0, 0]"/>
+            </Property>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Filme4ActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="pedidoSQL1 = &quot;SELECT tituloPortugues FROM filme where codigo = 4&quot;;&#xa;System.out.println(pedidoSQL1);&#xa;acessoBD = new AcessoBD();&#xa;acessoBD.conecta();&#xa;rs = acessoBD.consulta(pedidoSQL1);&#xa;try{&#xa;    while(rs.next()){&#xa;        Filme4.setText(rs.getString(&quot;tituloPortugues&quot;));}&#xa;    }&#xa;catch(SQLException e){&#xa;    System.out.println(&quot;Exce&#xe7;&#xe3;o: &quot; + e.toString());&#xa;}&#xa;acessoBD.fechaConexao();"/>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JButton(new ImageIcon(&quot;C:/Users/danie/Documents/GitHub/gelaflix/gelaflix/src/images/Poster/Titanic.jpg&quot;))"/>
           </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="Filme1">
@@ -224,13 +238,15 @@
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Filme1"/>
+            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="null" type="code"/>
+            </Property>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Filme1ActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="pedidoSQL1 = &quot;SELECT tituloPortugues FROM filme where codigo = 1&quot;;&#xa;System.out.println(pedidoSQL1);&#xa;acessoBD = new AcessoBD();&#xa;acessoBD.conecta();&#xa;rs = acessoBD.consulta(pedidoSQL1);&#xa;try{&#xa;    while(rs.next()){&#xa;    Filme1.setText(rs.getString(&quot;tituloPortugues&quot;));}&#xa;    }&#xa;catch(SQLException e){&#xa;    System.out.println(&quot;Exce&#xe7;&#xe3;o: &quot; + e.toString());&#xa;}&#xa;acessoBD.fechaConexao();"/>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JButton(new ImageIcon(&quot;../gelaflix/src/images/Poster/Matrix.jpg&quot;))"/>
           </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="ExitButton">
@@ -277,13 +293,15 @@
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Filme7"/>
+            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="null" type="code"/>
+            </Property>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Filme7ActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="pedidoSQL1 = &quot;SELECT tituloPortugues FROM filme where codigo = 7&quot;;&#xa;System.out.println(pedidoSQL1);&#xa;acessoBD = new AcessoBD();&#xa;acessoBD.conecta();&#xa;acessoBD.executa(pedidoSQL1);&#xa;rs = acessoBD.consulta(pedidoSQL1);&#xa;try{&#xa;    while(rs.next()){&#xa;        Filme7.setText(rs.getString(&quot;tituloPortugues&quot;));}&#xa;    }&#xa;catch(SQLException e){&#xa;    System.out.println(&quot;Exce&#xe7;&#xe3;o: &quot; + e.toString());&#xa;}&#xa;acessoBD.fechaConexao();"/>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JButton(new ImageIcon(&quot;C:/Users/danie/Documents/GitHub/gelaflix/gelaflix/src/images/Poster/TheExorcist.jpg&quot;))"/>
           </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="Filme6">
@@ -291,13 +309,15 @@
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Filme6"/>
+            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="null" type="code"/>
+            </Property>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Filme6ActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="pedidoSQL1 = &quot;SELECT tituloPortugues FROM filme where codigo = 6&quot;;&#xa;System.out.println(pedidoSQL1);&#xa;acessoBD = new AcessoBD();&#xa;acessoBD.conecta();&#xa;acessoBD.executa(pedidoSQL1);&#xa;rs = acessoBD.consulta(pedidoSQL1);&#xa;try{&#xa;    while(rs.next()){&#xa;        Filme6.setText(rs.getString(&quot;tituloPortugues&quot;));}&#xa;    }&#xa;catch(SQLException e){&#xa;    System.out.println(&quot;Exce&#xe7;&#xe3;o: &quot; + e.toString());&#xa;}&#xa;acessoBD.fechaConexao();"/>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JButton(new ImageIcon(&quot;C:/Users/danie/Documents/GitHub/gelaflix/gelaflix/src/images/Poster/Finding.jpg&quot;))"/>
           </AuxValues>
         </Component>
         <Component class="javax.swing.JToggleButton" name="userProfileButton">

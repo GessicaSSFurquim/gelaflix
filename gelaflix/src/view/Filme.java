@@ -5,16 +5,19 @@
  */
 package view;
 
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author danie
  */
 public class Filme extends javax.swing.JFrame {
 
+    String imgPath, fullPath;
     /**
      * Creates new form Filme
      */
-    public Filme(String tituloOriginal, String tituloPortugues, String classificacao, String sinopse, String duracao, int ano) {
+    public Filme(String tituloOriginal, String tituloPortugues, String classificacao, String sinopse, String duracao, int ano, String posterPath) {
         initComponents();
         jlNome.setText(tituloOriginal);
         jlNomePTBR.setText(tituloPortugues);
@@ -22,6 +25,9 @@ public class Filme extends javax.swing.JFrame {
         jtaSinopse.setText(sinopse);
         jlDuracao.setText(duracao);
         jlAno.setText(Integer.toString(ano));
+        imgPath = posterPath;
+        fullPath = "\"../gelaflix/src/images/Poster/"+imgPath+"\"";
+        System.out.println(fullPath);
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -35,7 +41,8 @@ public class Filme extends javax.swing.JFrame {
         jSeparator2 = new javax.swing.JSeparator();
         jPanel2 = new javax.swing.JPanel();
         jlNome = new javax.swing.JLabel();
-        jlPoster = new javax.swing.JLabel();
+        System.out.println("Part 3\"../gelaflix/src/images/Poster/"+imgPath+"\"");
+        jlPoster = new javax.swing.JLabel(new ImageIcon(fullPath));
         jlNomePTBR = new javax.swing.JLabel();
         jlClass = new javax.swing.JLabel();
         jlDuracao = new javax.swing.JLabel();
@@ -59,10 +66,11 @@ public class Filme extends javax.swing.JFrame {
         jlNome.setForeground(new java.awt.Color(253, 41, 123));
         jlNome.setText("Nome");
 
+        System.out.println(fullPath);
         jlPoster.setBackground(new java.awt.Color(253, 41, 123));
         jlPoster.setForeground(new java.awt.Color(253, 41, 123));
         jlPoster.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jlPoster.setText("[poster]");
+        jlPoster.setText(null);
         jlPoster.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(253, 41, 123), 1, true));
 
         jlNomePTBR.setText("[nomeptbr]");
@@ -135,26 +143,26 @@ public class Filme extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jSeparator1)
                             .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jlPoster, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jButton1)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel5)
                                     .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(jlPoster, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
+                                        .addGap(10, 10, 10)
                                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel4)
-                                            .addComponent(jLabel3)
-                                            .addComponent(jLabel2)
-                                            .addComponent(jLabel5)
-                                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                                .addGap(10, 10, 10)
-                                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jlNomePTBR)
-                                                    .addComponent(jlAno)
-                                                    .addComponent(jlDuracao)
-                                                    .addComponent(jlClass)
-                                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                            .addComponent(jLabel1))))
-                                .addGap(0, 22, Short.MAX_VALUE))))
+                                            .addComponent(jlNomePTBR)
+                                            .addComponent(jlAno)
+                                            .addComponent(jlDuracao)
+                                            .addComponent(jlClass)
+                                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(jLabel1))
+                                .addGap(0, 32, Short.MAX_VALUE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jButton1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(23, 23, 23)
                         .addComponent(jlNome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
@@ -190,7 +198,7 @@ public class Filme extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jlAno))
                     .addComponent(jlPoster, javax.swing.GroupLayout.PREFERRED_SIZE, 349, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
                 .addComponent(jButton1)
                 .addContainerGap())
         );
@@ -248,7 +256,7 @@ public class Filme extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Filme(null, null, null, null, null, 0).setVisible(true);
+                new Filme(null, null, null, null, null, 0, null).setVisible(true);
             }
         });
     }
